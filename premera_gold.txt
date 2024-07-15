@@ -1,0 +1,130 @@
+Summary for Table 1: Important Questions
+Overall Deductible:
+
+In-network: $1,500 Individual / $3,000 Family.
+Why this Matters: You must pay all costs up to the deductible amount before the plan begins to pay. Each family member must meet their own deductible until the family deductible is met.
+Services Covered Before Deductible:
+
+Yes: Copayments, certain prescription drugs, and services listed as "No charge" are covered before meeting the deductible.
+Why this Matters: Some items and services are covered even if the deductible hasn’t been met.
+Other Deductibles for Specific Services:
+
+No: There are no separate deductibles for specific services.
+Out-of-Pocket Limit:
+
+In-network: $6,800 Individual / $13,600 Family.
+Why this Matters: This is the most you will pay in a year for covered services.
+Not Included in Out-of-Pocket Limit:
+
+Premiums, balance-billed charges, penalties for not obtaining prior authorization, and services not covered by the plan.
+Why this Matters: These expenses don’t count toward the out-of-pocket limit.
+Pay Less with Network Providers:
+
+Yes: You will pay less if you use a provider in the plan’s network.
+Why this Matters: Network providers cost less. Out-of-network providers may charge more, and you might receive a balance bill.
+Need a Referral to See a Specialist:
+
+No: You can see a specialist without a referral.
+Summary for Table 2: Cost Sharing
+Primary Care Visit:
+
+In-network: No charge for first 2 visits, then $15 copayment per visit (Deductible does not apply).
+Out-of-Network: Not covered.
+Limitations: None.
+Specialist Visit:
+
+In-network: $45 copayment per visit (Deductible does not apply).
+Out-of-Network: Not covered.
+Limitations: None.
+Preventive Care/Screening/Immunization:
+
+In-network: No charge.
+Out-of-Network: Not covered.
+Limitations: You may have to pay for non-preventive services. Verify with your provider.
+Diagnostic Test (X-ray, Blood Work):
+
+In-network: 30% coinsurance.
+Out-of-Network: Not covered.
+Limitations: None.
+Imaging (CT/PET Scans, MRIs):
+
+In-network: 30% coinsurance.
+Out-of-Network: Not covered.
+Limitations: Prior authorization required for some outpatient imaging tests. No coverage without authorization.
+Prescription Drugs:
+
+Preferred Generic: $10 copayment (retail), $30 copayment (mail) (Deductible does not apply).
+Preferred Brand: 30% coinsurance.
+Non-preferred Brand: 50% coinsurance.
+Specialty Drugs: 50% coinsurance.
+Out-of-Network: Not covered.
+Limitations: Covers up to a 30-day supply (retail) and 90-day supply (mail). Prior authorization required for some drugs.
+Summary for Table 3: Medical Services
+Outpatient Surgery:
+
+Facility Fee: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Physician/Surgeon Fees: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Limitations: Prior authorization required for some services.
+Emergency Room Care:
+
+In-network and Out-of-Network: 30% coinsurance.
+Limitations: None.
+Urgent Care:
+
+Hospital-based: 30% coinsurance (In-network and Out-of-Network).
+Freestanding Center: $45 copayment per visit (In-network); Not covered (Out-of-Network).
+Limitations: None.
+Hospital Stay:
+
+Facility Fee: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Physician/Surgeon Fees: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Limitations: Prior authorization required for planned inpatient stays.
+Mental Health, Behavioral Health, or Substance Abuse Services:
+
+Outpatient Services: $45 copayment per visit (In-network); Not covered (Out-of-Network).
+Inpatient Services: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Limitations: Prior authorization required for planned inpatient stays.
+Pregnancy Services:
+
+Office Visits: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Childbirth/Delivery Professional Services: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Childbirth/Delivery Facility Services: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Limitations: Cost-sharing does not apply for preventive services. Prior authorization is not required.
+Summary for Additional Services
+Home Health Care:
+
+In-network: 30% coinsurance; Not covered (Out-of-Network).
+Limitations: Limited to 130 visits per calendar year.
+Rehabilitation Services:
+
+Office Visit: $45 copayment per visit (In-network); Not covered (Out-of-Network).
+Facility: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Limitations: Limited to 25 outpatient visits per calendar year, 30 inpatient days per calendar year. Prior authorization required for inpatient stays.
+Habilitation Services:
+
+Office Visit: $45 copayment per visit (In-network); Not covered (Out-of-Network).
+Facility: 30% coinsurance (In-network); Not covered (Out-of-Network).
+Limitations: Limited to 25 outpatient visits per calendar year, 30 inpatient days per calendar year. Prior authorization required for inpatient stays.
+Skilled Nursing Care:
+
+In-network: 30% coinsurance; Not covered (Out-of-Network).
+Limitations: Limited to 60 days per calendar year. Prior authorization required for inpatient stays.
+Durable Medical Equipment:
+
+In-network: 30% coinsurance; Not covered (Out-of-Network).
+Limitations: Prior authorization required for equipment over $750.
+Hospice Service:
+
+In-network: 30% coinsurance; Not covered (Out-of-Network).
+Limitations: Respite care limited to 14 days lifetime.
+Children's Eye Exam:
+
+In-network and Out-of-Network: $30 copayment per visit (Deductible does not apply).
+Limitations: Limited to one exam per calendar year (under age 19).
+Children's Glasses:
+
+In-network and Out-of-Network: No charge.
+Limitations: Frames and lenses limited to one pair per calendar year.
+Children's Dental Check-up:
+
+Not covered (both In-network and Out-of-Network).
