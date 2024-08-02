@@ -18,7 +18,7 @@ if "chatting_messages" not in st.session_state:
     st.session_state["chatting_messages"] = [
             {
                 "role":"assistant", 
-                "content":"Welcome, I'm Premera's agent! How can I assist you today ?", 
+                "content":"Welcome, I'm Premera's agent! How can I assist you today?", 
                 "question":''
             }]
 
@@ -27,14 +27,13 @@ for ms in st.session_state.chatting_messages:
         st.chat_message("user").write(ms["question"])    
     st.chat_message(ms["role"]).write(ms["content"])
 
-if chat := st.chat_input("How can I assist you today ?", key="user_input"):
+if chat := st.chat_input("How can I assist you today?", key="user_input"):
     #question = [{"role":"user", "content":chat}]
     st.chat_message("user").write(chat)
 
     # show busy cursor, chat completion will take some time to process the request.
     with st.spinner('GPT model processing your request..'):
-        response = gui_manager.compile(user_message=chat)
-        extractAnswer = response
+        extractAnswer = gui_manager.compile(user_message=chat)
     
     # response from model can be empty for prompt like "thank you"
     if extractAnswer != '':

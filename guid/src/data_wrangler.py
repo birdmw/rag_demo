@@ -4,8 +4,8 @@ from openai_client import *
 class DataWrangler:
 
     def __init__(self) -> None:
-        conn = sqlite3.connect('../../premera_plan.sqlite')
-        self._db_cursor = conn.cursor()
+        self.conn = sqlite3.connect('../../premera_plan3.sqlite')
+        self._db_cursor = self.conn.cursor()
         self.client = Gpt()
 
     def initialize(self):
@@ -14,6 +14,11 @@ class DataWrangler:
             (id INTEGER PRIMARY KEY, content TEXT, embedding BLOB, shape TEXT, layer INTEGER)
             ''')
         
+    def add_chunk(self, content, embedding, shape, layer):
+        self._db_cursor.execute('INSERT INTO document_chunks (content, embedding, shape, layer) VALUES (?, ?, ?, ?)',
+                    (content, ','.join(map(str, embedding)), str(shape), layer))
+        self.conn.commit()    
+
     def __fetch_all(self):
         self._db_cursor.execute('SELECT id, embedding, shape, layer FROM document_chunks')
         return self._db_cursor.fetchall()
