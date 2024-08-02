@@ -1,5 +1,6 @@
 from config import OPENAI_API_KEY
 from openai import OpenAI
+from user_client import *
 import numpy as np
 import time
 import requests
@@ -9,8 +10,9 @@ class Gpt:
 
     def __init__(self) -> None:
          self.client = OpenAI(api_key=OPENAI_API_KEY)
+         self.user_client = User()
          self.encoder = "text-embedding-ada-002"
-         self.system_message = """You are an AI assistant tasked with answering questions about a healthcare plan offered by a healthcare company based on provided context. Use the given information to answer the question accurately and concisely."""
+         self.system_message = """You are an AI assistant talking to a user directly, tasked with answering questions about a healthcare plan offered by a healthcare company based on provided context as well as specific user information. Use the given information to answer the question accurately and concisely."""
          self.system_no_rag = "act as you normally would, you are not allowed to search using the web at all"
 
     def rag_checkbox(self, user_message):
@@ -70,6 +72,9 @@ class Gpt:
         user_message = f"""Context from healthcare plan document:
 
         {context}
+
+        here is the specifc user data whom you are talking to directly:
+        {self.user_client.get_user_data()}
 
         Based on this context, please answer the following question:
         {query}

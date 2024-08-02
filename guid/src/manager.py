@@ -21,14 +21,14 @@ class Manager:
         st.markdown("<h1 style='text-align: center; color: white;'>Premera AI Assist</h1>", unsafe_allow_html=True)
         self._rag_check_box = st.sidebar.checkbox('Rag support?')
 
-        data_file = st.sidebar.file_uploader("Data File",type=['.txt'])
+       # data_file = st.sidebar.file_uploader("Data File",type=['.txt'])
         # Read the file contents
-        if data_file:
-            file_contents = data_file.read()
+       # if data_file:
+       #     file_contents = data_file.read()
             # Convert the contents to a string (assuming the file is a text file)
-            file_text = file_contents.decode("utf-8")
-            st.write(file_text)
-            self.chunk_file(file_text)            
+       #     file_text = file_contents.decode("utf-8")
+       ##     st.write(file_text)
+        #    self.chunk_file(file_text)            
         
        
     def chunk_file(self, text):

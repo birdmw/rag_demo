@@ -11,7 +11,7 @@ db_manager = DataWrangler()
 def initialize_gui():
     db_manager.initialize()
 
-st.sidebar.write('## Select File')
+#st.sidebar.write('## Select File')
 gui_manager.display_prompt_ui()
 
 if "chatting_messages" not in st.session_state:
