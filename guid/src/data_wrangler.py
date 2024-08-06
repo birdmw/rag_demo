@@ -4,7 +4,7 @@ from openai_client import *
 class DataWrangler:
 
     def __init__(self) -> None:
-        self.conn = sqlite3.connect('../../premera_plan.sqlite')
+        self.conn = sqlite3.connect('../../premera_docs.sqlite')
         self._db_cursor = self.conn.cursor()
         self.client = Gpt()
 

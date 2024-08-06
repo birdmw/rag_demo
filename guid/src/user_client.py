@@ -8,7 +8,8 @@ class User:
                             his wife broke her leg and went to urgent care in network which cost $1007.45
                             the xray for the leg was $150
                             Ali had in network outpatient surgery for his heart that cost $6350.23
-                            Ali takes preferred brand drug perscription heart medication they cost $432.38"""
+                            Ali takes preferred brand drug perscription heart medication they cost $432.38
+                            Ali's family is covered by the silver plan"""
         
 
     def get_user_data(self):
