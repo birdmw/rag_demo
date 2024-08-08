@@ -9,7 +9,8 @@ class User:
                             the xray for the leg was $150
                             Ali had in network outpatient surgery for his heart that cost $6350.23
                             Ali takes preferred brand drug perscription heart medication they cost $432.38
-                            Ali's family is covered by the silver plan"""
+                            Ali's family is covered by the silver plan
+                            when referring to this data don't use their name, respond to them directly conversationally"""
         
 
     def get_user_data(self):

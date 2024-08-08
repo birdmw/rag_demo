@@ -12,8 +12,10 @@ class Gpt:
          self.client = OpenAI(api_key=OPENAI_API_KEY)
          self.user_client = User()
          self.encoder = "text-embedding-ada-002"
-         self.system_message = """You are an AI assistant talking to a user directly, tasked with answering questions about a healthcare plan offered by a healthcare company based on provided context as well as specific user information. Use the given information to answer the question accurately and concisely."""
+         self.system_message = """You are a customer service agent for a healthcare company, talking to a user directly, tasked with answering questions about a healthcare plan offered by the healthcare company based on provided context as well as specific user information. Use the given information to answer the question accurately and concisely."""
          self.system_no_rag = "act as you normally would, you are not allowed to search using the web at all"
+         self.conversation = [{"role": "system", "content": self.system_message}]
+    
 
     def rag_checkbox(self, user_message):
         try:
@@ -38,7 +40,6 @@ class Gpt:
         response = self.client.chat.completions.create(
             model="gpt-4",
             messages=[
-                {"role": "system", "content": system_message},
                 {"role": "user", "content": user_message}
             ]
         )
@@ -79,17 +80,20 @@ class Gpt:
         Based on this context, please answer the following question:
         {query}
 
-        Provide a concise answer that directly addresses the question using only the information given in the context."""
+        Provide a concise answer that directly addresses the question using only the information given in the context as well 
+        as past chat history."""
+
+        self.conversation.append({"role": "user", "content": user_message})
 
         try:
             response = self.client.chat.completions.create(
                 model="gpt-4",
-                messages=[
-                    {"role": "system", "content": self.system_message},
-                    {"role": "user", "content": user_message}
-                ]
+                messages=self.conversation
             )
             final_answer = response.choices[0].message.content.strip()
+
+            self.conversation.append({"role": "assistant", "content": final_answer})
+            print(self.conversation)
             return final_answer
         
         except Exception as e:

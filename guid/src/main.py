@@ -1,6 +1,7 @@
 import streamlit as st
 from manager import *
 from data_wrangler import *
+import re 
 
 st.set_page_config(page_title="Prompting", page_icon=":robot_face:", layout="wide")
 
@@ -37,9 +38,11 @@ if chat := st.chat_input("How can I assist you today?", key="user_input"):
     
     # response from model can be empty for prompt like "thank you"
     if extractAnswer != '':
+        extractAnswer = extractAnswer.replace("$", "\\$")
         answer = {"role":"assistant", "content":extractAnswer, "question": chat}    
         st.chat_message("assistant").write(extractAnswer)
         st.session_state.chatting_messages.append(answer)
+        
 
 
 
