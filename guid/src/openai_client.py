@@ -12,7 +12,7 @@ class Gpt:
          self.client = OpenAI(api_key=OPENAI_API_KEY)
          self.user_client = User()
          self.encoder = "text-embedding-ada-002"
-         self.system_message = """You are a customer service agent for a healthcare company, talking to a user directly, tasked with answering questions about a healthcare plan offered by the healthcare company based on provided context as well as specific user information. Use the given information to answer the question accurately and concisely."""
+         self.system_message = """You are a customer service agent for a healthcare company, talking to a user directly, tasked with answering questions about a healthcare plan offered by the healthcare company based on provided context as well as specific user information and chat history. Use the given information to answer the question accurately and concisely."""
          self.system_no_rag = "act as you normally would, you are not allowed to search using the web at all"
          self.conversation = [{"role": "system", "content": self.system_message}]
     
@@ -33,6 +33,8 @@ class Gpt:
             print(f"Error in generating final answer: {e}")
             return "Unable to generate a final answer due to an error."
 
+   
+
     def summarize_pair(self, chunk1, chunk2):
         system_message = "You are an AI assistant tasked with summarizing text. Provide a concise summary that captures the key points of the given text."
         user_message = f"Summarize the following text:\n\n{chunk1}\n\n{chunk2}"
@@ -40,6 +42,7 @@ class Gpt:
         response = self.client.chat.completions.create(
             model="gpt-4",
             messages=[
+                {"role": "system", "content": system_message},
                 {"role": "user", "content": user_message}
             ]
         )
@@ -77,6 +80,9 @@ class Gpt:
         here is the specifc user data whom you are talking to directly:
         {self.user_client.get_user_data()}
 
+        here is the chat history of the conversation so far:
+        {self.__summarize_history()}
+
         Based on this context, please answer the following question:
         {query}
 
@@ -91,11 +97,24 @@ class Gpt:
                 messages=self.conversation
             )
             final_answer = response.choices[0].message.content.strip()
-
+            self.conversation[-1] = {"role": "user", "content": query}
             self.conversation.append({"role": "assistant", "content": final_answer})
-            print(self.conversation)
             return final_answer
         
         except Exception as e:
             print(f"Error in generating final answer: {e}")
             return "Unable to generate a final answer due to an error."
+
+    def __summarize_history(self):
+        print(str(self.conversation) + " hoopla ")
+        system_message = "You are an AI assistant tasked with summarizing a given chat history. Provide a concise summary that captures the key points of the given chat."
+        user_message = f"Summarize the following chat:\n\n{str(self.conversation)}"
+        
+        response = self.client.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": user_message}
+            ]
+        )
+        return response.choices[0].message.content.strip()  
