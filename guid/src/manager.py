@@ -10,17 +10,19 @@ class Manager:
     _db_cursor = None
     _openai_client = None
     _rag_check_box = False
+    _authenticated = False 
 
     def __init__(self) -> None:
         self.db_manager = DataWrangler()
         self.client = Gpt()
         self.chunk_manager = Chunker()
-
+       
     #--------- Load UI -----------------------
     def display_prompt_ui(self):
         st.markdown("<h1 style='text-align: center; color: white;'>Premera AI Assist</h1>", unsafe_allow_html=True)
-        self._rag_check_box = st.sidebar.checkbox('Rag support?')
-
+        self._rag_check_box = st.sidebar.checkbox('RAG')
+        self._authenticated = st.sidebar.checkbox('Authenticated') 
+        
        # data_file = st.sidebar.file_uploader("Data File",type=['.txt'])
         # Read the file contents
        # if data_file:
@@ -42,4 +44,4 @@ class Manager:
         
         relevant_chunks = self.db_manager.retrieve_chunks(user_message)
         combined_context = " ".join([chunk[0][:max_chunk_length] for chunk in relevant_chunks])
-        return self.client.generate(combined_context, user_message)
+        return self.client.generate(combined_context, user_message, self._authenticated)

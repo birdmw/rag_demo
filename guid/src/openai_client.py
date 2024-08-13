@@ -72,24 +72,41 @@ class Gpt:
       
         raise Exception("Failed to encode text after all attempts") 
     
-    def generate(self, context, query):
-        user_message = f"""Context from healthcare plan document:
+    def generate(self, context, query, authenticated):
+        user_message = ""
+        if authenticated:
+            user_message = f"""Context from healthcare plan document:
 
-        {context}
+            {context}
 
-        here is the specifc user data whom you are talking to directly:
-        {self.user_client.get_user_data()}
+            here is the specifc user data whom you are talking to directly:
+            {self.user_client.get_user_data()}
 
-        here is the chat history of the conversation so far:
-        {self.__summarize_history()}
+            here is the chat history of the conversation so far:
+            {self.__summarize_history()}
 
-        Based on this context, please answer the following question:
-        {query}
+            Based on this context, please answer the following question:
+            {query}
 
-        Provide a concise answer that directly addresses the question using only the information given in the context as well 
-        as past chat history."""
+            Provide a concise answer that directly addresses the question using only the information given in the context as well 
+            as past chat history."""
 
-        self.conversation.append({"role": "user", "content": user_message})
+            self.conversation.append({"role": "user", "content": user_message})
+        else:
+            user_message = f"""Context from healthcare plan document:
+
+            {context}
+    
+            here is the chat history of the conversation so far:
+            {self.__summarize_history()}
+
+            Based on this context, please answer the following question:
+            {query}
+
+            Provide a concise answer that directly addresses the question using only the information given in the context as well 
+            as past chat history."""
+
+            self.conversation.append({"role": "user", "content": user_message})
 
         try:
             response = self.client.chat.completions.create(

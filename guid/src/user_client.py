@@ -12,6 +12,5 @@ class User:
                             Ali's family is covered by the silver plan
                             when referring to this data don't use their name, respond to them directly conversationally"""
         
-
     def get_user_data(self):
         return self.user_data
