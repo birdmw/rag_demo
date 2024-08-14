@@ -14,10 +14,14 @@ class DataWrangler:
             (id INTEGER PRIMARY KEY, content TEXT, embedding BLOB, shape TEXT, layer INTEGER)
             ''')
         
+    """
+    this is for inserting into the vector database, its not needed for demo puporses but is direct funtionality on the DB
+
     def add_chunk(self, content, embedding, shape, layer):
         self._db_cursor.execute('INSERT INTO document_chunks (content, embedding, shape, layer) VALUES (?, ?, ?, ?)',
                     (content, ','.join(map(str, embedding)), str(shape), layer))
         self.conn.commit()    
+    """
 
     def __fetch_all(self):
         self._db_cursor.execute('SELECT id, embedding, shape, layer FROM document_chunks')

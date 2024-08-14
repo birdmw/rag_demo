@@ -33,21 +33,6 @@ class Gpt:
             print(f"Error in generating final answer: {e}")
             return "Unable to generate a final answer due to an error."
 
-   
-
-    def summarize_pair(self, chunk1, chunk2):
-        system_message = "You are an AI assistant tasked with summarizing text. Provide a concise summary that captures the key points of the given text."
-        user_message = f"Summarize the following text:\n\n{chunk1}\n\n{chunk2}"
-        
-        response = self.client.chat.completions.create(
-            model="gpt-4",
-            messages=[
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": user_message}
-            ]
-        )
-        return response.choices[0].message.content.strip()  
-
     def encode_text(self, text, max_retries=10, backoff_factor=2, timeout=30):
         for attempt in range(max_retries):
             try:
@@ -122,6 +107,7 @@ class Gpt:
             print(f"Error in generating final answer: {e}")
             return "Unable to generate a final answer due to an error."
 
+    #this is to summarize chat history, im not finished with this yet but its not high pri, would like to get back to it at some point - ALI
     def __summarize_history(self):
         print(str(self.conversation) + " hoopla ")
         system_message = "You are an AI assistant tasked with summarizing a given chat history. Provide a concise summary that captures the key points of the given chat."
