@@ -19,7 +19,7 @@ class Manager:
 
     #--------- Load UI -----------------------
     def display_prompt_ui(self):
-        st.markdown("<h1 style='text-align: center; color: white;'>Premera AI Assist</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: white;'>PremeraGPT</h1>", unsafe_allow_html=True)
         self._rag_check_box = st.sidebar.checkbox('RAG')
         self._authenticated = st.sidebar.checkbox('Authenticated') 
         

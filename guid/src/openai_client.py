@@ -67,7 +67,8 @@ class Gpt:
             here is the specifc user data whom you are talking to directly:
             {self.user_client.get_user_data()}
             when referring to this data don't use their name, respond to them directly conversationally
-            
+            if they want to know data about their wife in this data, say I'm sorry I can only answer questions about your information. 
+
             here is the chat history of the conversation so far:
             {self.__summarize_history()}
 
